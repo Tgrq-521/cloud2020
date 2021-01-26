@@ -1,0 +1,24 @@
+server:
+  port: 80
+
+
+
+eureka:
+  client:
+    register-with-eureka: false      #true表示将自己注册进EurekaServer
+    #fetch-registry: false        #true,表示从EurekaServer抓取已有的注册信息；单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡
+    service-url:
+      #单机版  defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+feign:
+  hystrix:
+    enabled: true
+
+ribbon:   #设置feign客户端超时时间（openfeign默认支持ribbon）
+  ReadTimeout: 5000             #指的是建立连接所用的最大时间，即在网络正常的情况下，两端连接所用的时间，这里是5秒
+  ConnectTimeout: 5000          #指的是建立连接后，从服务器读取到可用资源最大的等待时间。这里是5秒
+
+
+logging:
+  level:
+    com.atguigu.springcloud.service.PaymentFeignService: debug #以debug的形式打印full级别的全日志

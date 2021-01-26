@@ -1,0 +1,15 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+    register-with-eureka: false
+ribbon:   #设置feign客户端超时时间（openfeign默认支持ribbon）
+  ReadTimeout: 5000             #指的是建立连接所用的最大时间，即在网络正常的情况下，两端连接所用的时间，这里是5秒
+  ConnectTimeout: 5000          #指的是建立连接后，从服务器读取到可用资源最大的等待时间。这里是5秒
+
+feign:
+  hystrix:
+    enabled: true
