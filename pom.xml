@@ -25,6 +25,10 @@
       <module>cloud-gateway-gateway9527</module>
       <module>cloud-config-center-3344</module>
       <module>cloud-config-client-3355</module>
+    <module>cloudalibaba-provider-payment9001</module>
+      <module>cloudalibaba-provider-payment9002</module>
+      <module>cloudalibaba-consumer-nacos-order83</module>
+      <module>cloudalibaba-config-nacos-client3377</module>
   </modules>
 
 
@@ -111,6 +115,7 @@
         <artifactId>lombok</artifactId>
         <version>${lombok.version}</version>
       </dependency>
+
     </dependencies>
   </dependencyManagement>
 
