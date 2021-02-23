@@ -4,7 +4,11 @@ server:
 spring:
   application:
     name: cloud-order-service     #微服务名称就是注册进eureka的名字
-
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1  #采样率值介于0到1之间，1则表示全部采集 ，一般用0.5
 eureka:
   client:
     register-with-eureka: true      #true表示将自己注册进EurekaServer
